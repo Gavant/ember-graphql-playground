@@ -9,11 +9,9 @@ import IntlService from 'ember-intl/services/intl';
 import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 import SessionService from 'ember-simple-auth/services/session';
 
-// eslint-disable-next-line ember/no-mixins
-import PageLayout from 'ember-graphql-playground/mixins/page-layout';
 import CurrentUserService from 'ember-graphql-playground/services/current-user';
 
-export default class Application extends PageLayout(Route.extend(ApplicationRouteMixin)) {
+export default class Application extends Route.extend(ApplicationRouteMixin) {
     routeAfterAuthentication = 'dashboard';
     @service declare currentUser: CurrentUserService;
     @service declare session: SessionService;

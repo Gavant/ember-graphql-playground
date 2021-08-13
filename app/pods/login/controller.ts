@@ -42,8 +42,8 @@ export default class LoginController extends Controller {
             throw err;
         }
     }
-
 }
+
 declare module '@ember/controller' {
     interface Registry {
         login: LoginController;
