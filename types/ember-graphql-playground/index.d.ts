@@ -18,4 +18,10 @@ export interface ServerErrorPayload {
     errors: ServerError[];
 }
 
+export interface User {
+    id: number;
+    firstName: string;
+    lastName: string;
+}
+
 export {};

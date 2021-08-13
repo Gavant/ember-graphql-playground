@@ -24,5 +24,8 @@
 /bower.json.ember-try
 /package.json.ember-try
 
+# env files
+.env-*
+
 .DS_Store
 

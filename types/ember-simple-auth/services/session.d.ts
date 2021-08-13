@@ -1,11 +1,11 @@
 declare module 'ember-simple-auth/services/session' {
-import Evented from '@ember/object/evented';
-import Transition from '@ember/routing/-private/transition';
-import Service from '@ember/service';
+    import Evented from '@ember/object/evented';
+    import Transition from '@ember/routing/-private/transition';
+    import Service from '@ember/service';
 
-import User from 'ember-graphql-playground/pods/user/model';
+    import { User } from 'ember-graphql-playground';
 
-        interface SessionAuthenticatedData {
+    interface SessionAuthenticatedData {
         id: string;
         id_token: string;
         refresh_token: string;
@@ -64,6 +64,5 @@ import User from 'ember-graphql-playground/pods/user/model';
         prohibitAuthentication(routeOrCallback: string | (() => void)): boolean;
         handleAuthentication(routeAfterAuth: string): void;
         handleInvalidation(routeAfterInvalid: string): void;
-
     }
 }

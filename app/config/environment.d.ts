@@ -21,5 +21,8 @@ declare const config: {
     pageTitle: {
         prepend: boolean;
     };
+    apollo: {
+        apiURL: string;
+    };
     APP: Record<string, unknown>;
 };

@@ -56,8 +56,9 @@ module.exports = function (environment) {
             hostWhitelist: [new RegExp(process.env.FASTBOOT_WHITELIST_DOMAIN), /^localhost:\d+$/]
         },
 
-        //deployment environment-specific variables
-        apiBaseUrl: process.env.API_BASE_URL
+        apollo: {
+            apiURL: process.env.GRAPHQL_ENDPOINT
+        }
     };
 
     if (environment === 'development') {
