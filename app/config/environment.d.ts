@@ -15,14 +15,13 @@ declare const config: {
     rootURL: string;
     routerRootURL: string;
     apiBaseUrl: string;
+    graphqlApiUrl: string;
+    graphqlToken: string;
     fastboot: {
         hostWhitelist: Array<string | RegExp>;
     };
     pageTitle: {
         prepend: boolean;
-    };
-    apollo: {
-        apiURL: string;
     };
     APP: Record<string, unknown>;
 };
