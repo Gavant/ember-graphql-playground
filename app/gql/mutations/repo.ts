@@ -5,6 +5,8 @@ export const STAR_REPO = gql`
         addStar(input: $input) {
             clientMutationId
             starrable {
+                stargazerCount
+                viewerHasStarred
                 stargazers(first: 3) {
                     nodes {
                         name
@@ -20,6 +22,8 @@ export const UNSTAR_REPO = gql`
         removeStar(input: $input) {
             clientMutationId
             starrable {
+                stargazerCount
+                viewerHasStarred
                 stargazers(first: 3) {
                     nodes {
                         name
@@ -36,6 +40,8 @@ export type StarRepoMutation = {
         __typename?: 'addStar';
         clientMutationId: string;
         starrable: {
+            stargazerCount: number;
+            viewerHasStarred: boolean;
             stargazers: {
                 nodes: {
                     __typename?: 'User';
@@ -48,10 +54,12 @@ export type StarRepoMutation = {
 
 export type UnstarRepoMutation = {
     __typename?: 'Mutation';
-    addStar?: {
+    removeStar?: {
         __typename?: 'removeStar';
         clientMutationId: string;
         starrable: {
+            stargazerCount: number;
+            viewerHasStarred: boolean;
             stargazers: {
                 nodes: {
                     __typename?: 'User';

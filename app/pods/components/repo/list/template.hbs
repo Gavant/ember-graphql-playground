@@ -12,11 +12,7 @@
     </h5>
     <ul class="list-group">
         {{#each this.repos.data.search.edges as |repo|}}
-            <Repo::List::Item
-                @repo={{repo.node}}
-                @isListLoading={{this.notReady}}
-                @onToggleStar={{this.repos.refetch}}
-            />
+            <Repo::List::Item @repo={{repo.node}} @isListLoading={{this.notReady}} />
         {{else}}
             <li class="list-group-item text-muted">
                 No repositories found for this organization.

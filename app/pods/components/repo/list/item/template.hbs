@@ -16,7 +16,7 @@
         disabled={{this.isLoading}}
         {{on "click" (fn this.toggleStar @repo)}}
     >
-        {{#if @repo.viewerHasStarred}}&#9733;{{else}}&#9734;{{/if}}
-        {{@repo.stargazerCount}}
+        {{#if this.isStarred}}&#9733;{{else}}&#9734;{{/if}}
+        {{this.starCount}}
     </button>
 </li>
