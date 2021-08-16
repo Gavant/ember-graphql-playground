@@ -1,0 +1,22 @@
+<li class="list-group-item d-flex justify-content-between align-items-center">
+    <div>
+        <div>
+            <strong>{{@repo.name}}</strong>
+            <span class="small">
+                (<a href={{@repo.url}} target="_blank" rel="noopener noreferrer" class="text-decoration-none">view</a>)
+            </span>
+        </div>
+        <div class="text-muted small">
+            {{or @repo.shortDescriptionHTML "No description given"}}
+        </div>
+    </div>
+    <button
+        type="button"
+        class="btn btn-outline-secondary"
+        disabled={{this.isLoading}}
+        {{on "click" (fn this.toggleStar @repo)}}
+    >
+        {{#if @repo.viewerHasStarred}}&#9733;{{else}}&#9734;{{/if}}
+        {{@repo.stargazerCount}}
+    </button>
+</li>

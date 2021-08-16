@@ -8,14 +8,15 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function() {
-    this.route('login');
-    this.route('password', function() {
-        this.route('forgot');
-        this.route('reset');
-    });
+  this.route('login');
+  this.route('password', function() {
+      this.route('forgot');
+      this.route('reset');
+  });
 
-    //make sure these routes are always defined last!
-    this.route('five-hundred', { path: '/500' });
-    this.route('four-oh-three', { path: '/403' });
-    this.route('four-oh-four', { path: '/*path' });
+  //make sure these routes are always defined last!
+  this.route('five-hundred', { path: '/500' });
+  this.route('four-oh-three', { path: '/403' });
+  this.route('four-oh-four', { path: '/*path' });
+  this.route('repos');
 });

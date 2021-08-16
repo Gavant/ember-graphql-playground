@@ -56,8 +56,15 @@ module.exports = function (environment) {
             hostWhitelist: [new RegExp(process.env.FASTBOOT_WHITELIST_DOMAIN), /^localhost:\d+$/]
         },
 
+        'ember-cli-mirage': {
+            enabled: false
+        },
+
         graphqlApiUrl: process.env.GRAPHQL_ENDPOINT,
+
         // TODO this is temporary...token would come from the user's session in a real app
+        // NOTE: to create your own token for local testing, follow this guide:
+        // https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token
         graphqlToken: process.env.GRAPHQL_TOKEN
     };
 

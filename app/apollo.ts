@@ -6,7 +6,10 @@ import ENV from 'ember-graphql-playground/config/environment';
 export default function setupApolloClient(context: Record<string, unknown>): void {
     // HTTP connection to the API
     const httpLink = createHttpLink({
-        uri: ENV.graphqlApiUrl
+        uri: ENV.graphqlApiUrl,
+        headers: {
+            Authorization: `bearer ${ENV.graphqlToken}`
+        }
     });
 
     // Cache implementation

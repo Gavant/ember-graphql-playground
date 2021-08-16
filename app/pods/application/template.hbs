@@ -1,9 +1,8 @@
 <div class="container py-4">
-    <h1>{{t "brand.slogan"}}</h1>
-    {{outlet "header"}}
-    {{outlet "nav"}}
+    <nav class="nav">
+        <User::WelcomeMsg />
+    </nav>
     {{outlet}}
-    {{outlet "footer"}}
 </div>
 <ProgressBar />
 <NotificationContainer @position={{this.notificationPosition}} />

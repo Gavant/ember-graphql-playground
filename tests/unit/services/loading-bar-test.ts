@@ -10,9 +10,9 @@ module('Unit | Service | loading-bar', function (hooks) {
         const service: LoadingBar = this.owner.lookup('service:loading-bar');
 
         service.show();
-        assert.equal(service.isShown, true);
+        assert.true(service.isShown);
 
         service.hide();
-        assert.equal(service.isShown, false);
+        assert.false(service.isShown);
     });
 });

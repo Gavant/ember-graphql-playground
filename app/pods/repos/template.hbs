@@ -1,0 +1,16 @@
+<h2>Repositories</h2>
+<div class="mb-3 row">
+    <div class="col-md-4">
+        <div class="d-flex align-items-center">
+            <label for="input-org" class="me-3">Organization</label>
+            <Input
+                id="input-org"
+                class="form-control"
+                placeholder="GitHub organization"
+                @value={{this.organization}}
+                maxlength={{255}}
+            />
+        </div>
+    </div>
+</div>
+<Repo::List @org={{this.organization}} />

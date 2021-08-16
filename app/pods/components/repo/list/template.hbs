@@ -1,0 +1,22 @@
+{{#if this.repos.loading}}
+    Loading repos...
+{{else if this.repos.error}}
+    <div class="alert alert-danger">
+        <p>Whoops! Something bad happened...</p>
+        <pre>{{this.repos.error.message}}</pre>
+    </div>
+{{else}}
+    <h5>
+        <strong>{{this.repos.data.search.repositoryCount}}</strong>
+        repos found
+    </h5>
+    <ul class="list-group">
+        {{#each this.repos.data.search.edges as |repo|}}
+            <Repo::List::Item
+                @repo={{repo.node}}
+                @isListLoading={{this.notReady}}
+                @onToggleStar={{this.repos.refetch}}
+            />
+        {{/each}}
+    </ul>
+{{/if}}
