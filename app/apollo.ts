@@ -28,6 +28,10 @@ export default function setupApolloClient(context: Record<string, unknown>): voi
                         keyArgs: ['query', 'type'],
                         // concats the incoming list items with the existing list items
                         merge(existing = { edges: [] }, incoming) {
+                            // TODO this is a really naive merge function as it assumes new requests
+                            // will always come in the correct order, requests will not be repeated, etc
+                            // in this case, we should use the request args' `afterId` cursor value
+                            // to make sure incoming data is put in the correct spot, etc
                             return {
                                 ...existing,
                                 ...incoming,
