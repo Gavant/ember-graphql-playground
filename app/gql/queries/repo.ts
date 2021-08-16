@@ -1,10 +1,11 @@
 import { gql } from 'glimmer-apollo';
 
 export const GET_ORG_REPOS = gql`
-    query GetOrgRepos($queryString: String!) {
-        search(query: $queryString, type: REPOSITORY, first: 10) {
+    query GetOrgRepos($queryString: String!, $afterId: String, $beforeId: String) {
+        search(query: $queryString, after: $afterId, before: $beforeId, type: REPOSITORY, first: 10) {
             repositoryCount
             edges {
+                cursor
                 node {
                     ... on Repository {
                         id
@@ -34,6 +35,8 @@ export type GetOrgReposQuery = {
         __typename?: 'SearchResultItemConnection';
         repositoryCount: number;
         edges: {
+            __typename?: 'SearchResultItemEdge';
+            cursor?: string;
             node: RepoFragment;
         }[];
     };
@@ -41,4 +44,6 @@ export type GetOrgReposQuery = {
 
 export type GetOrgReposQueryVariables = {
     queryString: string;
+    afterId?: string;
+    beforeId?: string;
 };

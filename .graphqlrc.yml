@@ -1,2 +1,3 @@
+# https://docs.github.com/en/graphql/overview/public-schema
 schema: './graphql/schema.docs.graphql'
 documents: 'app/**/*.{graphql,js,ts}'

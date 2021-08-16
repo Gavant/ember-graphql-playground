@@ -17,6 +17,22 @@
                 @isListLoading={{this.notReady}}
                 @onToggleStar={{this.repos.refetch}}
             />
+        {{else}}
+            <li class="list-group-item text-muted">
+                No repositories found for this organization.
+            </li>
         {{/each}}
     </ul>
+    {{#if this.canLoadMore}}
+        <div class="d-grid mt-3">
+            <button
+                type="button"
+                class="btn btn-outline-secondary"
+                disabled={{this.notReady}}
+                {{on "click" this.loadMore}}
+            >
+                {{if this.notReady "Loading..." "Load more"}}
+            </button>
+        </div>
+    {{/if}}
 {{/if}}
