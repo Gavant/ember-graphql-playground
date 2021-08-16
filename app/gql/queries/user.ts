@@ -1,6 +1,6 @@
 import { gql } from 'glimmer-apollo';
 
-export const GET_USER = gql`
+export const GET_USER_GQL = gql`
     query GetUser {
         viewer {
             login

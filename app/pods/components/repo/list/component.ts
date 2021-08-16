@@ -2,7 +2,11 @@ import Component from '@glimmer/component';
 import { useQuery } from 'glimmer-apollo';
 import { NetworkStatus } from '@apollo/client/core';
 
-import { GET_ORG_REPOS, GetOrgReposQuery, GetOrgReposQueryVariables } from 'ember-graphql-playground/gql/queries/repo';
+import {
+    GET_ORG_REPOS_GQL,
+    GetOrgReposQuery,
+    GetOrgReposQueryVariables
+} from 'ember-graphql-playground/gql/queries/repo';
 import { action } from '@ember/object';
 
 interface RepoListArgs {
@@ -11,7 +15,7 @@ interface RepoListArgs {
 
 export default class RepoList extends Component<RepoListArgs> {
     repos = useQuery<GetOrgReposQuery, GetOrgReposQueryVariables>(this, () => [
-        GET_ORG_REPOS,
+        GET_ORG_REPOS_GQL,
         {
             variables: {
                 queryString: this.queryString

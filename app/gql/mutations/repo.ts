@@ -1,6 +1,6 @@
 import { gql } from 'glimmer-apollo';
 
-export const STAR_REPO = gql`
+export const STAR_REPO_GQL = gql`
     mutation starRepo($input: AddStarInput!) {
         addStar(input: $input) {
             clientMutationId
@@ -17,7 +17,7 @@ export const STAR_REPO = gql`
     }
 `;
 
-export const UNSTAR_REPO = gql`
+export const UNSTAR_REPO_GQL = gql`
     mutation unstarRepo($input: RemoveStarInput!) {
         removeStar(input: $input) {
             clientMutationId

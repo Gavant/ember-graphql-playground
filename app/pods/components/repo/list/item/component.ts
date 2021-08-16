@@ -8,8 +8,8 @@ import {
     StarRepoMutation,
     UnstarRepoMutation,
     StarRepoMutationVariables,
-    STAR_REPO,
-    UNSTAR_REPO
+    STAR_REPO_GQL,
+    UNSTAR_REPO_GQL
 } from 'ember-graphql-playground/gql/mutations/repo';
 
 interface RepoListItemArgs {
@@ -19,8 +19,8 @@ interface RepoListItemArgs {
 }
 
 export default class RepoListItem extends Component<RepoListItemArgs> {
-    addStar = useMutation<StarRepoMutation, StarRepoMutationVariables>(this, () => [STAR_REPO, {}]);
-    removeStar = useMutation<UnstarRepoMutation, StarRepoMutationVariables>(this, () => [UNSTAR_REPO, {}]);
+    addStar = useMutation<StarRepoMutation, StarRepoMutationVariables>(this, () => [STAR_REPO_GQL, {}]);
+    removeStar = useMutation<UnstarRepoMutation, StarRepoMutationVariables>(this, () => [UNSTAR_REPO_GQL, {}]);
 
     // patterns like this would probably be more common than they are in ember-data controlled list views
     // as since the query for the list of the data is different and separate from the query/mutation that

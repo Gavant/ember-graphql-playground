@@ -1,6 +1,6 @@
 import { gql } from 'glimmer-apollo';
 
-export const GET_ORG_REPOS = gql`
+export const GET_ORG_REPOS_GQL = gql`
     query GetOrgRepos($queryString: String!, $afterId: String, $beforeId: String) {
         search(query: $queryString, after: $afterId, before: $beforeId, type: REPOSITORY, first: 10) {
             repositoryCount

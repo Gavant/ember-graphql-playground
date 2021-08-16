@@ -7,12 +7,12 @@
             </span>
         </div>
         <div class="text-muted small">
-            {{or @repo.shortDescriptionHTML "No description given"}}
+            {{{or @repo.shortDescriptionHTML "No description given"}}}
         </div>
     </div>
     <button
         type="button"
-        class="btn btn-outline-secondary"
+        class="btn btn-outline-secondary text-nowrap ms-2"
         disabled={{this.isLoading}}
         {{on "click" (fn this.toggleStar @repo)}}
     >
